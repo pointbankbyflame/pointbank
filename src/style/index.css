@@ -1,0 +1,63 @@
+/* Animations */
+
+@keyframes rotation_animation {
+  20% {
+    transform: rotate(90deg) scale(1.5, 1.5);
+    filter: hue-rotate(90deg);
+  }
+  40% {
+    transform: rotate(180deg);
+    filter: hue-rotate(180deg);
+  }
+  60% {
+    transform: rotate(270deg) scale(1.5, 1.5);
+    filter: hue-rotate(270deg);
+  }
+  80% {
+    transform: rotate(360deg) scale(2, 2);
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    transform: rotate(0deg);
+    filter: hue-rotate(0deg);
+  }
+}
+
+/* Styles */
+
+html, body {
+  padding: 0;
+  margin: 0;
+}
+
+#window {
+  /*We set the principal window layout dimensions to full screen*/
+  width: 100vw; height: 100vh;
+  background: black;
+}
+
+#mainlayout {
+  /*We set the principal window layout dimensions to full screen*/
+  width: 100%; height: 100%;
+  /*We center everything inside the main layout*/
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+
+  align-items: center;
+  justify-content: center;
+}
+
+#pointbank_logo {
+  /* We set the logo dimensions to 60 percent of screen width */
+  width: 60vw; height: 60vw;
+  /* Add some sweet rotation and color changing animation */
+  animation-name: rotation_animation;
+  animation-duration: 10s;
+  animation-delay: 2s;
+  animation-iteration-count: infinite;
+}

@@ -1,0 +1,67 @@
+/* Animations */
+
+@keyframes zoom_animation {
+  25% {
+    transform: scale(1.5, 1.5);
+    filter: hue-rotate(180deg);
+  }
+  50% {
+    transform: scale(1, 1);
+    filter: hue-rotate(0deg);
+  }
+  75% {
+    transform: scale(1.5, 1.5);
+    filter: hue-rotate(180deg);
+  }
+  100% {
+    transform: scale(1, 1);
+    filter: hue-rotate(0deg);
+  }
+}
+
+/* Styles */
+
+html, body {
+  padding: 0;
+  margin: 0;
+}
+
+#window {
+  /*We set the principal window layout dimensions to full screen*/
+  width: 100vw; height: 100vh;
+  background: black;
+}
+
+#mainlayout {
+  /*We set the principal window layout dimensions to full screen*/
+  width: 100vw; height: 100vh;
+  /*We center everything inside the main layout*/
+  
+  display: flex;
+  flex-direction: column;
+
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+
+  align-items: center;
+  justify-content: center;
+}
+
+#message {
+  margin-top: 50px;
+  color: white;
+  font-size: 30px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+}
+
+#offline_icon {
+  /* We set the logo dimensions to 60 percent of screen width */
+  width: 50vw; height: 50vw;
+  /* Add some sweet rotation and color changing animation */
+  animation-name: zoom_animation;
+  animation-duration: 10s;
+  animation-delay: 2s;
+  animation-iteration-count: infinite;
+}
